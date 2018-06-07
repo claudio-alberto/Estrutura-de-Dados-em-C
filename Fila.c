@@ -68,7 +68,7 @@ int main(void) {
   inserir(Fila, 9);
   inserir(Fila, 8);
   inserir(Fila, 7);
-  inserir(Fila, 6);
+  inserir(Fila, 5);
   imprime(Fila);
   remover(Fila);
   imprime(Fila);
