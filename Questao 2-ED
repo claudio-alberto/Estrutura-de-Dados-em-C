@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  int vet[5], vet2[5];
+  int i, cont = 0;
+
+  for(i = 0; i < 5; i++){
+    scanf("%d", &vet[i]);
+  }
+  printf("Vetor: %d\n", *vet);
+
+  for(i = 0; i < 5; i++){
+    if(vet[i] < 0){
+      vet2[i] = vet[i]*(-1);
+      cont++;
+    }
+    else{
+      vet2[i] = vet[i];
+    }
+  }
+
+  for(i = 0; i < 5; i++){
+    printf("%d %d\n", vet[i], vet2[i]);
+  }
+  printf("Contador: %d\n", cont);
+
+}
