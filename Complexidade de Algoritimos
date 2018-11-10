@@ -1,0 +1,21 @@
+Complexidade de Algoritimos
+
+Observar "coisas" que variam. Por exemplo, quantidade de vezes que um laço vai ser percorrido devido ao tamanho de um determinado vetor.
+Notação Big-O
+
+laço = O(n) Linear
+matriz = O(n**2) Exponencial
+Dois laços distintos, sem qualquer ligação = O(2n) = O(n)
+QuickSorte = O(n log n) - Melhor sort que existe
+
+	Melhor caso: O algoritimo executa o menor número possivel de operações; Usa notação Ômega(1); O(1); Tempo constante;
+	Pior caso: Faz o algoritimo executar um número maior de operações;
+	Caso Médio: Usa notação Theta(n); Considera-se todas as possiveis instâncias e mede-se o tempo médio.
+
+O(1) = Constante, mais rapido impossivel;
+O(log n)  = logaritimico, muito bom;
+O(n) = Linear, o melhor que se pode obter quando é nao é necessario examinar toda entrada;
+O(n log n) = Limite de ordenações;
+O(n**2) = quadrático, algoritimos simples de ordenação;
+O(n**k) = polinomial
+O(K**n) = exponencial, evite;
