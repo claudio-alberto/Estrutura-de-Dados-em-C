@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+    int ident;
+    int tipo;
+    float origem;
+    float destino;
+    int *pont;
+    int quanti;
+}packet;
+
+packet *createDataPacket(int iden, int origem, int destino, int tam){
+  packet *pacote;
+  pacote =  malloc(sizeof(packet));
+  pacote->pont = malloc(tam * sizeof(int));
+  pacote->ident = iden;
+  pacote->origem = origem;
+  pacote->destino = destino;
+  pacote->quanti = tam;
+
+  printf("%d\n", pacote->quanti);
+  pacote->pont[0] = 1000;
+  printf("%d\n", pacote->pont[0]);
+
+  return pacote;
+}
+
+void writeData(packet *pacote, int vetor[], int tam){
+
+for(int i = 0; i < pacote->quanti; i++){
+  pacote->pont[i] = vetor[i];
+  printf("%d\n", pacote->pont[i]);
+}
+
+}
+
+packet *createACKPacket(int iden, int origem, int destino){
+  packet *pacote;
+  pacote =  malloc(sizeof(packet));
+  pacote->pont = NULL;
+  pacote->ident = iden;
+  pacote->origem = origem;
+  pacote->destino = destino;
+  pacote->quanti = 0;
+  return pacote;
+}
+
+packet *clonePacket(packet *pacote){
+  packet *copia = pacote;
+  printf("%d", copia->quanti);
+}
+
+
+int main(void) {
+  printf("%p\n\n", createDataPacket(1, 10, 20, 10));
+
+  printf("%p\n", clonePacket(createDataPacket(1, 10, 20, 10)));
+
+  int vetor1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+  writeData(createDataPacket(1, 10, 20, 10),vetor1, 10);
+
+  printf("Hello World\n");
+  return 0;
+}
